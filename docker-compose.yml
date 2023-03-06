@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  next:
+    image: node:latest
+    working_dir: /app
+    tty: true
+    volumes:
+      - ./app:/app
+    ports:
+      - 3000:3000
