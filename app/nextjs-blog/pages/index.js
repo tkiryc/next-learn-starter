@@ -1,7 +1,9 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../componenets/layout';
+import Layout, { siteTitle } from '../components/layout';
 import utilStytles from '../styles/utils.module.css';
-import { getSortedPostData } from '../lib/post';
+import { getSortedPostData } from '../lib/posts';
+import Link from 'next/link';
+import Date from '../components/date';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostData();
@@ -30,11 +32,11 @@ export default function Home({ allPostsData }) {
         <ul className={utilStytles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStytles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStytles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
