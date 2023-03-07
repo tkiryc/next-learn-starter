@@ -24,3 +24,8 @@ npm run dev
 ```
 
 ![スクリーンショット 2023-03-06 164251](https://user-images.githubusercontent.com/15275153/223051296-905df1b3-21af-493d-ac7e-9d7d2cdad265.jpg)
+
+## add node packages
+```
+npm install gray-matter
+```
